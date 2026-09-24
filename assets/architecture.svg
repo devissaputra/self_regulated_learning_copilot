@@ -1,35 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
-<title id="title">Self-Regulated Learning Copilot workflow</title>
-<desc id="desc">Five-stage workflow diagram for this research prototype.</desc>
-<rect width="1200" height="300" rx="24" fill="#f7f8fa"/>
-<text x="50" y="48" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#17202a">Self-Regulated Learning Copilot · baseline architecture</text>
-<text x="50" y="76" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#59636e">Current baseline, with each decision kept visible for review.</text>
-<rect x="50.0" y="120" width="190" height="92" rx="16" fill="#ffffff" stroke="#38598b" stroke-width="2"/>
-<circle cx="75.0" cy="145" r="14" fill="#38598b"/>
-<text x="75.0" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">1</text>
-<text x="145.0" y="154" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#26323d">Learner state</text>
-<line x1="248.0" y1="166.0" x2="269.5" y2="166.0" stroke="#8391a1" stroke-width="2"/>
-<path d="M 261.5 160.0 L 269.5 166.0 L 261.5 172.0" fill="none" stroke="#8391a1" stroke-width="2"/>
-<rect x="277.5" y="120" width="190" height="92" rx="16" fill="#ffffff" stroke="#38598b" stroke-width="2"/>
-<circle cx="302.5" cy="145" r="14" fill="#38598b"/>
-<text x="302.5" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">2</text>
-<text x="372.5" y="154" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#26323d">Support rules</text>
-<line x1="475.5" y1="166.0" x2="497.0" y2="166.0" stroke="#8391a1" stroke-width="2"/>
-<path d="M 489.0 160.0 L 497.0 166.0 L 489.0 172.0" fill="none" stroke="#8391a1" stroke-width="2"/>
-<rect x="505.0" y="120" width="190" height="92" rx="16" fill="#ffffff" stroke="#38598b" stroke-width="2"/>
-<circle cx="530.0" cy="145" r="14" fill="#38598b"/>
-<text x="530.0" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">3</text>
-<text x="600.0" y="154" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#26323d">Support policy</text>
-<line x1="703.0" y1="166.0" x2="724.5" y2="166.0" stroke="#8391a1" stroke-width="2"/>
-<path d="M 716.5 160.0 L 724.5 166.0 L 716.5 172.0" fill="none" stroke="#8391a1" stroke-width="2"/>
-<rect x="732.5" y="120" width="190" height="92" rx="16" fill="#ffffff" stroke="#38598b" stroke-width="2"/>
-<circle cx="757.5" cy="145" r="14" fill="#38598b"/>
-<text x="757.5" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">4</text>
-<text x="827.5" y="154" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#26323d">Prompt or hint</text>
-<line x1="930.5" y1="166.0" x2="952.0" y2="166.0" stroke="#8391a1" stroke-width="2"/>
-<path d="M 944.0 160.0 L 952.0 166.0 L 944.0 172.0" fill="none" stroke="#8391a1" stroke-width="2"/>
-<rect x="960.0" y="120" width="190" height="92" rx="16" fill="#ffffff" stroke="#38598b" stroke-width="2"/>
-<circle cx="985.0" cy="145" r="14" fill="#38598b"/>
-<text x="985.0" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">5</text>
-<text x="1055.0" y="154" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#26323d">Learner reflection</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+<title id="title">Self-Regulated Learning Copilot architecture</title>
+<desc id="desc">A cyclical self-regulated learning support architecture from goal and plan through strategy use, monitoring, learner-controlled support, reflection, and adaptation.</desc>
+<rect width="1200" height="360" rx="24" fill="#f7f8fa"/>
+<text x="50" y="48" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#17202a">Self-Regulated Learning Copilot · agency-preserving SRL cycle</text>
+<text x="50" y="76" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#59636e">The support policy can intervene, offer choices, or remain completely silent.</text>
+
+<rect x="35" y="125" width="180" height="105" rx="16" fill="#fff" stroke="#38598b" stroke-width="2"/>
+<text x="125" y="154" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#26323d">Goal + plan</text>
+<text x="125" y="178" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">next action</text>
+<text x="125" y="198" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">success evidence</text>
+
+<line x1="220" y1="177" x2="255" y2="177" stroke="#8391a1" stroke-width="2"/><path d="M247 171 L255 177 L247 183" fill="none" stroke="#8391a1" stroke-width="2"/>
+
+<rect x="265" y="125" width="180" height="105" rx="16" fill="#fff" stroke="#38598b" stroke-width="2"/>
+<text x="355" y="154" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#26323d">Strategy use</text>
+<text x="355" y="178" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">effort · progress</text>
+<text x="355" y="198" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">stall evidence</text>
+
+<line x1="450" y1="177" x2="485" y2="177" stroke="#8391a1" stroke-width="2"/><path d="M477 171 L485 177 L477 183" fill="none" stroke="#8391a1" stroke-width="2"/>
+
+<rect x="495" y="105" width="210" height="145" rx="16" fill="#fff" stroke="#38598b" stroke-width="2"/>
+<text x="600" y="140" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#26323d">Agency gate</text>
+<text x="600" y="166" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">productive struggle?</text>
+<text x="600" y="186" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">opt-out · cooldown?</text>
+<text x="600" y="206" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">learner asked for help?</text>
+<text x="600" y="226" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">prompt burden?</text>
+
+<line x1="710" y1="177" x2="745" y2="177" stroke="#8391a1" stroke-width="2"/><path d="M737 171 L745 177 L737 183" fill="none" stroke="#8391a1" stroke-width="2"/>
+
+<rect x="755" y="105" width="195" height="145" rx="16" fill="#fff" stroke="#38598b" stroke-width="2"/>
+<text x="852" y="140" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#26323d">Support action</text>
+<text x="852" y="166" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">silent · plan · monitor</text>
+<text x="852" y="186" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">strategy · choice</text>
+<text x="852" y="206" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">hint · reflection</text>
+
+<line x1="955" y1="177" x2="990" y2="177" stroke="#8391a1" stroke-width="2"/><path d="M982 171 L990 177 L982 183" fill="none" stroke="#8391a1" stroke-width="2"/>
+
+<rect x="1000" y="125" width="165" height="105" rx="16" fill="#fff" stroke="#38598b" stroke-width="2"/>
+<text x="1082" y="154" text-anchor="middle" font-family="Arial" font-size="14" font-weight="700" fill="#26323d">Reflection</text>
+<text x="1082" y="178" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">what worked?</text>
+<text x="1082" y="198" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">what changes next?</text>
+
+<path d="M1082 238 C1082 315 125 315 125 238" fill="none" stroke="#6d7f8f" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M119 246 L125 238 L131 246" fill="none" stroke="#6d7f8f" stroke-width="2"/>
+<text x="600" y="321" text-anchor="middle" font-family="Arial" font-size="13" fill="#59636e">Reflection and learner response can inform the next goal, plan, or strategy cycle.</text>
 </svg>
