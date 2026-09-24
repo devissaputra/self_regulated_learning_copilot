@@ -1,1 +1,1 @@
-"""Research prototype package."""
+"""Agency-preserving self-regulated learning support-policy tools."""
