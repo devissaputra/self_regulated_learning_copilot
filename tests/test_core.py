@@ -169,6 +169,19 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(decision["action"], "silent_monitor")
         self.assertEqual(decision["reason"], "productive_struggle")
 
+    def test_productive_struggle_overrides_incomplete_plan_prompt(self):
+        value = state(
+            stalled_minutes=12,
+            effort=0.9,
+            recent_progress=0.4,
+            strategy_effectiveness=0.8,
+            next_action=None,
+            success_evidence=None,
+        )
+        decision = core.decide_support(value)
+        self.assertEqual(decision["action"], "silent_monitor")
+        self.assertEqual(decision["reason"], "productive_struggle")
+
     def test_unproductive_struggle_offers_choice_before_hint(self):
         value = state(
             stalled_minutes=20,
@@ -333,6 +346,52 @@ class CoreTests(unittest.TestCase):
 
     def test_legacy_reflection_prompt_is_none_for_monitor(self):
         self.assertIsNone(core.reflection_prompt(state()))
+
+    def test_interaction_diagnostics(self):
+        rows = [
+            {
+                "decision": {
+                    "action": "planning_prompt",
+                    "interrupt": True,
+                },
+                "learner_response": "accepted",
+            },
+            {
+                "decision": {
+                    "action": "strategy_prompt",
+                    "interrupt": True,
+                },
+                "learner_response": "changed_strategy",
+            },
+            {
+                "decision": {
+                    "action": "silent_monitor",
+                    "interrupt": False,
+                },
+                "learner_response": "not_applicable",
+            },
+        ]
+        result = core.interaction_diagnostics(rows)
+        self.assertEqual(result["prompted_interactions"], 2)
+        self.assertEqual(result["strategy_change_count"], 1)
+        self.assertEqual(
+            result["engaged_response_fraction_among_prompts"],
+            1.0,
+        )
+
+    def test_interaction_diagnostics_validates_response(self):
+        with self.assertRaises(ValueError):
+            core.interaction_diagnostics(
+                [
+                    {
+                        "decision": {
+                            "action": "planning_prompt",
+                            "interrupt": True,
+                        },
+                        "learner_response": "mystery",
+                    }
+                ]
+            )
 
 
 if __name__ == "__main__":
