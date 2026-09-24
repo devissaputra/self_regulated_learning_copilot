@@ -1,3 +1,19 @@
-learner,timestamp,action,mastery,confidence,effort,stalled_minutes
-L01,1,open_activity,0.4,0.5,0.7,2
-L01,2,attempt,0.45,0.4,0.8,8
+learner,step,mastery,confidence,effort,stalled_minutes,goal,goal_progress,next_action,success_evidence,current_strategy,previous_strategy,strategy_effectiveness,strategy_changes,recent_progress,monitoring_accuracy,learner_requested_help,support_preference,minutes_since_support,support_count,reflection_due,task_difficulty,time_pressure,learner_response,next_strategy
+L01,1,0.35,0.55,0.55,2,Complete baseline analysis,0.10,,,rereading,,0.45,0,0.10,0.60,false,normal,999,0,false,0.50,0.40,accepted,
+L01,2,0.40,0.58,0.65,4,Complete baseline analysis,0.35,Fit a baseline,Record baseline metric,worked example,rereading,0.70,1,0.35,0.70,false,normal,30,1,false,0.50,0.40,not_applicable,
+L01,3,0.68,0.72,0.70,1,Complete baseline analysis,0.97,Document result,Result and limitation documented,worked example,rereading,0.80,1,0.55,0.80,false,normal,60,1,true,0.50,0.30,completed_reflection,
+L02,1,0.48,0.60,0.90,12,Explain model behavior,0.40,Compare two examples,Comparison notes,worked example,,0.82,0,0.40,0.75,false,normal,999,0,false,0.70,0.35,not_applicable,
+L02,2,0.54,0.62,0.88,11,Explain model behavior,0.55,Compare counterexample,Counterexample explained,worked example,,0.78,0,0.35,0.80,false,normal,999,0,false,0.70,0.35,not_applicable,
+L03,1,0.30,0.38,0.70,20,Build evaluation plan,0.20,Choose evaluation design,Design choice justified,trial-and-error,,0.15,0,0.05,0.60,false,normal,999,0,false,0.75,0.55,continued_without_help,
+L03,2,0.31,0.32,0.75,22,Build evaluation plan,0.22,Choose evaluation design,Design choice justified,trial-and-error,,0.12,0,0.03,0.60,true,normal,25,1,false,0.75,0.55,changed_strategy,worked example
+L03,3,0.43,0.48,0.78,5,Build evaluation plan,0.48,Compare alternatives,Two designs compared,worked example,trial-and-error,0.68,1,0.32,0.70,false,normal,35,2,false,0.70,0.50,not_applicable,
+L04,1,0.55,0.52,0.60,18,Prepare presentation,0.30,Outline evidence,Outline complete,outline-first,,0.30,0,0.10,0.60,false,off,999,0,false,0.55,0.65,not_applicable,
+L04,2,0.56,0.50,0.65,19,Prepare presentation,0.32,Outline evidence,Outline complete,outline-first,,0.28,0,0.08,0.60,true,off,999,0,false,0.55,0.65,accepted,
+L05,1,0.45,0.44,0.55,18,Finish coding task,0.25,Fix failing test,All tests pass,debugging,,0.20,0,0.05,0.50,false,normal,5,2,false,0.70,0.70,not_applicable,
+L05,2,0.46,0.45,0.56,20,Finish coding task,0.28,Fix failing test,All tests pass,debugging,,0.20,0,0.04,0.50,false,normal,30,4,false,0.70,0.70,not_applicable,
+L06,1,0.62,0.80,0.65,3,Interpret experiment,0.50,Check assumptions,Assumptions documented,inspection,,0.60,0,0.42,0.20,false,normal,999,0,false,0.55,0.40,accepted,
+L06,2,0.65,0.72,0.68,2,Interpret experiment,0.60,Compare estimate with evidence,Comparison documented,inspection,,0.62,0,0.45,0.65,false,normal,25,1,false,0.55,0.40,not_applicable,
+L07,1,0.50,0.55,0.60,6,Learn sequence modeling,0.35,Explain next-state logic,Explanation written,rereading,,0.20,0,0.25,0.60,false,normal,999,0,false,0.65,0.35,changed_strategy,retrieval practice
+L07,2,0.58,0.62,0.72,4,Learn sequence modeling,0.52,Solve without notes,Solution completed,retrieval practice,rereading,0.72,1,0.45,0.72,false,normal,30,1,false,0.65,0.35,not_applicable,
+L08,1,0.70,0.70,0.70,1,Finalize report,0.60,Write limitations,Limitations section complete,outline-first,,0.75,0,0.50,0.80,false,minimal,999,0,false,0.45,0.30,not_applicable,
+L08,2,0.78,0.76,0.75,1,Finalize report,0.96,Check final evidence,All claims supported,outline-first,,0.80,0,0.55,0.85,false,minimal,999,0,true,0.45,0.30,completed_reflection,
