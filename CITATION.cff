@@ -5,6 +5,6 @@ type: software
 authors:
   - family-names: "Saputra"
     given-names: "Devis Wawan"
-repository-code: "https://github.com/devissaputra/self-regulated-learning-copilot"
+repository-code: "https://github.com/devissaputra/self_regulated_learning_copilot"
 license: MIT
 version: 0.1.0
