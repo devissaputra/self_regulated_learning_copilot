@@ -408,6 +408,15 @@ def decide_support(
             choices=("strategy_check", "guided_hint", "continue"),
         )
 
+    struggle = classify_struggle(state, config)
+    if struggle == "productive":
+        return _decision(
+            "silent_monitor",
+            "productive_struggle",
+            interrupt=False,
+            intensity=0,
+        )
+
     completeness = plan_completeness(state)
     if (
         completeness < config.minimum_plan_completeness
@@ -420,15 +429,6 @@ def decide_support(
             interrupt=True,
             intensity=1,
             choices=("plan_now", "continue", "decline"),
-        )
-
-    struggle = classify_struggle(state, config)
-    if struggle == "productive":
-        return _decision(
-            "silent_monitor",
-            "productive_struggle",
-            interrupt=False,
-            intensity=0,
         )
 
     if struggle == "unproductive":
@@ -685,3 +685,64 @@ def support_level(state: SRLState) -> str:
 
 def reflection_prompt(state: SRLState):
     return render_support(decide_support(state), state)
+
+
+def interaction_diagnostics(interactions):
+    """Summarize observable learner responses to support interactions."""
+    if not isinstance(interactions, Sequence) or isinstance(
+        interactions, (str, bytes)
+    ):
+        raise ValueError("interactions must be a sequence")
+    if not interactions:
+        raise ValueError("interactions must not be empty")
+
+    response_counts = Counter()
+    prompted = 0
+    declined = 0
+    accepted = 0
+    strategy_changes = 0
+
+    for row in interactions:
+        if not isinstance(row, Mapping):
+            raise ValueError("each interaction must be a mapping")
+        decision = row.get("decision")
+        response = row.get("learner_response")
+        if not isinstance(decision, Mapping):
+            raise ValueError("interaction is missing decision")
+        action = decision.get("action")
+        if action not in SUPPORT_ACTIONS:
+            raise ValueError("interaction contains unknown action")
+        if response not in LEARNER_RESPONSES:
+            raise ValueError(
+                "learner_response must be one of "
+                f"{sorted(LEARNER_RESPONSES)}"
+            )
+
+        interrupted = bool(decision.get("interrupt", False))
+        if interrupted:
+            prompted += 1
+        if response == "declined":
+            declined += 1
+        if response in {
+            "accepted",
+            "requested_more_help",
+            "changed_strategy",
+            "completed_reflection",
+        }:
+            accepted += 1
+        if response == "changed_strategy":
+            strategy_changes += 1
+        response_counts[response] += 1
+
+    return {
+        "interactions": len(interactions),
+        "prompted_interactions": prompted,
+        "response_counts": dict(sorted(response_counts.items())),
+        "decline_fraction_among_prompts": (
+            declined / prompted if prompted else None
+        ),
+        "engaged_response_fraction_among_prompts": (
+            accepted / prompted if prompted else None
+        ),
+        "strategy_change_count": strategy_changes,
+    }
