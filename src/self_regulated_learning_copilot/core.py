@@ -1,3 +1,7 @@
+# Calculation reading guide: ../CALCULATIONS.md (repository root).
+# Plan completeness = present planning fields / 4.
+# The four fields are goal, next action, success evidence and strategy. Completeness is structural, not educational quality. State variables are supplied and the policy does not infer motivation or psychological status.
+
 import math
 from collections import Counter
 from collections.abc import Mapping, Sequence

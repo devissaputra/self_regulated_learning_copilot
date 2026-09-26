@@ -1,0 +1,22 @@
+{
+  "question": "When should support be offered, delayed or declined?",
+  "data": "Supplied learning state, explicit plans, preferences, reflection and prompt history.",
+  "method": "Check plan structure and struggle rules; respect learner choice and prompt burden; support reflection and adaptation.",
+  "formula": "Plan completeness = present planning fields / 4.",
+  "interpretation": "The four fields are goal, next action, success evidence and strategy. Completeness is structural, not educational quality. State variables are supplied and the policy does not infer motivation or psychological status.",
+  "status": "SYNTHETIC / RULE-BASED PROTOTYPE | no educational validity claim",
+  "source": "results/review_examples.json",
+  "rows": [
+    {
+      "label": "planning fields present: 3 of 4",
+      "path": [
+        "outputs",
+        "planning fields present: 3 of 4"
+      ],
+      "unit": "unitless"
+    }
+  ],
+  "table_title": "Worked example — illustrative, not a measured research result",
+  "evidence_note": "Illustrative inputs and calculations are in scripts/review_examples.py.",
+  "finding": "This transparent support policy uses supplied plans, progress, preferences, and interaction history to decide whether to offer help or remain silent. It preserves refusal and help requests, limits prompt burden, and links reflection to later strategy choices. The synthetic examples test policy behavior; structural plan completeness and struggle labels are operational rules rather than validated psychological assessments."
+}

@@ -1,14 +1,29 @@
 # Self-Regulated Learning Copilot
 
+This transparent support policy uses supplied plans, progress, preferences, and interaction history to decide whether to offer help or remain silent. It preserves refusal and help requests, limits prompt burden, and links reflection to later strategy choices. The synthetic examples test policy behavior; structural plan completeness and struggle labels are operational rules rather than validated psychological assessments.
+
+## Start here
+
+- [Calculations, evidence and verification scope](CALCULATIONS.md)
+- [Figure sources and exact numerical paths](docs/figure_spec.json)
+- [Data status](data/README.md)
+
+![Study question, data, design and interpretation](assets/review_overview.svg)
+
+![Defined calculation and source-linked evidence](assets/review_calculations.svg)
+
+**Review scope:** 40 existing unittest checks passed. The bundled demonstration executed successfully in this review.
+
+## Detailed project documentation
+
 > Transparent, agency-preserving support policy for goals, planning, monitoring, strategy adaptation, learner-requested help, reflection, and prompt-burden control.
 
 [![CI](https://github.com/devissaputra/self_regulated_learning_copilot/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/self_regulated_learning_copilot/actions/workflows/ci.yml)
 
-![Self-Regulated Learning Copilot architecture](assets/architecture.svg)
 
 **Area:** AI in Education · Self-Regulated Learning · Adaptive Scaffolding  
 **Status:** working research prototype  
-**Author:** Devis Wawan Saputra
+**Author:** Devis Saputra
 
 ## What this project is for
 
@@ -34,7 +49,6 @@ It receives an explicit state and decides whether support should be offered—or
 
 ## The SRL cycle
 
-![Self-Regulated Learning Copilot data flow](assets/data_flow.svg)
 
 The design is informed by cyclical self-regulated learning models in which learners repeatedly move through task understanding, goals/plans, strategy use, monitoring, and adaptation.
 
@@ -274,7 +288,6 @@ They do not establish that the support improved learning.
 
 ## Synthetic demo
 
-![Self-Regulated Learning Copilot synthetic demo](assets/demo_snapshot.svg)
 
 The bundled dataset contains eight synthetic longitudinal scenarios:
 
@@ -375,7 +388,6 @@ See `docs/related_work.md`.
 
 ## Evaluation checklist
 
-![Self-Regulated Learning Copilot evaluation checklist](assets/evaluation_dashboard.svg)
 
 A real evaluation should separate:
 
